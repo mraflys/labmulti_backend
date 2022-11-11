@@ -8,8 +8,7 @@ module.exports = function(app) {
       "x-access-token, Origin, Content-Type, Accept"
     );
     next();
-  });
-
+  });  
   app.get("/api/user/all", controller.allAccess);
 
   app.get("/api/user/user", [authJwt.verifyToken], controller.userBoard);
